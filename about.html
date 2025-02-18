@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>About This Site</h1>
+    <p>This site displays quotes from famous people.</p>
+    <p>It was designed and developed by Alexios Zavras (zvr)</p>
+    <div id="db-info"></div>
+    <p><a href="index.html">Show a random quote</a></p>
+
+    <script>
+        // Fetch and display database information
+        fetch('data/stats.json')
+            .then(response => response.json())
+            .then(info => {
+                const infoDiv = document.getElementById('db-info');
+                infoDiv.innerHTML = `
+                    <p>${info.totalQuotes}</p>
+                    <p>${info.lastUpdated}</p>
+                `;
+            })
+            .catch(error => {
+                console.error('Error loading database info:', error);
+                document.getElementById('db-info').textContent = 'Error loading database information';
+            });
+    </script>
+</body>
+</html>

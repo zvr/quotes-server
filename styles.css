@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+#quote-container {
+    margin-top: 50px;
+}
+
+#quote-author, #quote-lifespan, #quote-book, #quote-year {
+    font-style: italic;
+    color: gray;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    color: blue;
+    text-decoration: none;
+}
